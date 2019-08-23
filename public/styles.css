@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: 'monstserrat', sans-serif;
+}
+
+body {
+	background: linear-gradient(to right, rgb(250, 160, 35), rgb(255, 100, 40));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 90%;
+	width: 12000px;
+	background-color: white;
+	box-shadow: 0 5px 10px black; /* x, y, blur, color */
+	border-radius: 5px;
+}
+.header {
+	background-color: #222;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.content {
+	padding: 40px;
+	margin-top: 50px;
+}
+
+.icon-container {
+	position: relative;
+	top: 70px;
+	padding: 20px;
+	background-color: white;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	opacity: 1;
+	transform: scale(1);
+	transition: 200ms ease-in-out;
+}
+.icon-container.active {
+	pointer-events: all;
+	opacity: 1;
+	transform: scale(1.5);
+}
+
+.general-information {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+.status {
+	font-size: 3rem;
+	font-weight: bold;
+}
+.location {
+	font-size: 2rem;
+	font-weight: normal;
+	margin-top: 10px;
+}
+
+.detail-section {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.detail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-basis: 0;
+	flex-grow: 1;
+	padding: 20px;
+}
+
+.detail.bordered {
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+}
+.detail .title {
+	font-size: 2rem;
+	flex-grow: 1;
+	font-weight: bold;
+	color: #777;
+}
+
+.detail .value {
+	font-size: 2rem;
+	margin-top: 20px;
+}
+
+.city-search-container {
+	display: flex;
+	justify-content: center;
+}
+.city-search {
+	margin-top: 40px;
+	font-size: 2rem;
+	outline: none;
+	border: 1px solid #777;
+	border-radius: 5px;
+	padding: 10px 15px;
+	width: 100%;
+}
+
+/* styling with Google's APi */
+.pac-item {
+	font-size: 2rem;
+	padding: 10px 10px;
+}
+
+.pac-icon {
+	display: none;
+}
+
+.pac-item-query {
+	font-size: 2rem;
+	padding-right: 14px;
+}
+
+.darksky-logo {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	color: #333;
+	font-size: 1.5rem;
+}
+
+.modal {
+	font-weight: bold;
+	font-size: 1.5rem;
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	transition: 200ms ease-in-out;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 1;
+	background-color: white;
+	width: 500px;
+	height: 30px;
+	max-width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 5px 10px black; /* x, y, blur, color */
+}
+.modal.active {
+	transform: translate(-50%, -50%) scale(2);
+}
+#overlay {
+	position: fixed;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	pointer-events: none; /* When the overlay is invisible, it won't capture any click events. */
+}
+
+#overlay.active {
+	pointer-events: all;
+	opacity: 1;
+}

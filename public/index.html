@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Weather app</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="shortcut icon" href="" />
+		<script  defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsiD_KkREFvoJ8er-_CxbF-dT-y4WY1ZU&libraries=places"></script>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+		<script  defer src="scripts.js"></script>
+		
+        <body>
+		<div id="overlay"></div>
+
+		<div class="container">
+			<div class="header">
+				<div class="icon-container">
+					<canvas id="icon" width="100" height="100"></canvas>
+				</div>
+			</div>
+			<div class="content">
+				<div class="general-information">
+					<div data-status class="status">Enter a Location</div>
+					<div data-location class="location">To Find the Weather</div>
+				</div>
+				<div class="detail-section">
+					<div class="detail">
+						<div  class="title">Wind</div>
+						<div data-wind class="value">TBD</div>
+					</div> 
+					<div class="detail bordered">
+						<div  class="title">Temperature</div>
+						<div data-temp class="value">TBD</div>
+					</div>
+					<div class="detail">
+						<div  class="title">Precipitation</div>
+						<div data-precipitation class="value">TBD</div>
+					</div>
+				</div>
+				<div class="city-search-container">
+					<input type="text" class="city-search" data-city-search placeholder="Enter Location" />
+				</div>
+			</div>
+		</div>
+		
+		<div data-modal-target="#modal" class="modal">
+			<div class="clock">
+			</div>
+		</div>
+		
+		<a href="https://darksky.net/poweredby" class="darksky-logo">Powered By Dark Sky</a>
+	</body>
+</html>
